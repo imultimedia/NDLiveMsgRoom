@@ -13,13 +13,15 @@
 
 
 // 最小刷新时间间隔
-#define reloadTimeSpan 0.5
-// 每次追加爬楼消息的上线（大于这个值时，更早的消息会被抛弃）
-#define tempCount 1000
-// 消息上线
-#define totalMaxCount 5000
-// 消息下线
-#define totalMinCount 1000
+#define reloadTimeSpan 1.0
+// 爬楼消息的上限（大于这个值时，更早的消息会被抛弃）
+#define tempMaxCount 200
+// 爬楼消息的下限
+#define tempMinCount 100
+// 消息上限
+#define totalMaxCount 500
+// 消息下限
+#define totalMinCount 200
 
 #define RoomMsgScroViewTag      1002
 
@@ -94,6 +96,19 @@
     if (!self.inPending) {
         // 如果不处在爬楼状态，追加数据源并滚动到底部
         [self appendAndScrollToBottom];
+    }else{
+        //爬楼状态时，这里要处理一个历史消息，不能让他一直增加
+        //限制了当总消息数大于tempCount时，清理临时数据tempMsgArray里旧的消息
+        pthread_mutex_lock(&_mutex);
+        NSInteger tempMsgCnt = self.tempMsgArray.count;
+        NSLog(@"当前爬楼消息数:%ld",tempMsgCnt);
+        if (tempMsgCnt>tempMaxCount) {
+            
+            NSInteger needDeleteNum = tempMsgCnt-tempMinCount;
+            NSLog(@"触发爬楼消息上限，需要删除:%ld条消息",needDeleteNum);
+            [self.tempMsgArray removeObjectsInRange:NSMakeRange(0, needDeleteNum)];
+        }
+        pthread_mutex_unlock(&_mutex);
     }
 }
 
@@ -103,17 +118,52 @@
         return;
     }
     pthread_mutex_lock(&_mutex);
-    // 执行插入
-    NSMutableArray *indexPaths = [NSMutableArray array];
-    for (NDMsgModel *item in self.tempMsgArray) {
-        _AllHeight += item.attributeModel.msgHeight;
-        
-        [self.msgArray addObject:item];
-        [indexPaths addObject:[NSIndexPath indexPathForRow:self.msgArray.count - 1 inSection:0]];
-    }
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
-    [self.tempMsgArray removeAllObjects];
     
+    // 消息汇总前做判断，用来清理旧数据
+    NSInteger totalMsgCnt = self.tempMsgArray.count+self.msgArray.count;// 总消息数量
+    NSLog(@"当前总消息数:%ld",totalMsgCnt);
+    if (totalMsgCnt > totalMaxCount) {
+        
+        NSLog(@"触发消息上限删除");
+        // 大于消息数量清理上限
+        // 会从正式数据源的第一条消息开始删除，删除到只剩totalMinCount条消息后，刷新聊天列表
+        
+        // 先插入数据然后删除旧的300条，最后刷新 tableview
+        for (NDMsgModel *item in self.tempMsgArray) {
+            [self.msgArray addObject:item];
+        }
+        
+        // 删除数据到只剩totalMinCount
+        NSInteger needDeleteNum = totalMsgCnt-totalMinCount;
+        NSLog(@"需要删除%ld条消息",needDeleteNum);
+        [self.msgArray removeObjectsInRange:NSMakeRange(0, needDeleteNum)];
+        
+        // 计算高度
+        for (NDMsgModel *item in self.msgArray) {
+            _AllHeight += item.attributeModel.msgHeight;
+        }
+        
+        // 刷新tableview
+        [self.tableView reloadData];
+        
+        
+    } else if(totalMsgCnt < totalMinCount || (totalMsgCnt > totalMinCount && totalMsgCnt < totalMaxCount)) {
+        // 小于消息数量清理下限或在上下限之间
+        // 会将新加入的缓存数据源消息追加到聊天列表中，而不是刷新聊天列表
+        
+        // 执行插入
+        NSMutableArray *indexPaths = [NSMutableArray array];
+        for (NDMsgModel *item in self.tempMsgArray) {
+            _AllHeight += item.attributeModel.msgHeight;
+            
+            [self.msgArray addObject:item];
+            [indexPaths addObject:[NSIndexPath indexPathForRow:self.msgArray.count - 1 inSection:0]];
+        }
+        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+    }
+    
+    [self.tempMsgArray removeAllObjects];
+   
     pthread_mutex_unlock(&_mutex);
     
     if (_AllHeight > MsgTableViewHeight) {
@@ -126,18 +176,22 @@
         self.tableView.height = _AllHeight;
     }
     
-    //执行插入动画并滚动
+    // 执行插入动画并滚动
     [self scrollToBottom:NO];
 }
 
 /** 执行插入动画并滚动 */
 - (void)scrollToBottom:(BOOL)animated {
-    NSInteger s = [self.tableView numberOfSections];  //有多少组
-    if (s<1) return;
-    NSInteger r = [self.tableView numberOfRowsInSection:s-1]; //最后一组行
-    if (r<1) return;
-    NSIndexPath *ip = [NSIndexPath indexPathForRow:r-1 inSection:s-1];  //取最后一行数据
-    [self.tableView scrollToRowAtIndexPath:ip atScrollPosition:UITableViewScrollPositionBottom animated:animated]; //滚动到最后一行
+    // 有多少组
+    NSInteger s = [self.tableView numberOfSections];
+    if (s < 1) return;
+    // 最后一组行
+    NSInteger r = [self.tableView numberOfRowsInSection:s - 1];
+    if (r < 1) return;
+    // 取最后一行数据
+    NSIndexPath *ip = [NSIndexPath indexPathForRow:r - 1 inSection:s - 1];
+    // 滚动到最后一行
+    [self.tableView scrollToRowAtIndexPath:ip atScrollPosition:UITableViewScrollPositionBottom animated:animated];
 }
 
 - (void)setInPending:(BOOL)inPending {
@@ -151,6 +205,9 @@
 - (void)updateMoreBtnHidden {
     if (self.inPending && self.tempMsgArray.count > 0) {
         self.moreButton.hidden = NO;
+        NSInteger count = self.tempMsgArray.count;
+        NSString *title = [NSString stringWithFormat:@"%@条新消息",count > 100 ? @"99+" : @(count)];
+        [self.moreButton setTitle:title forState:UIControlStateNormal];
     } else {
         self.moreButton.hidden = YES;
     }
@@ -377,6 +434,10 @@
         _tableView.dataSource = self;
         
         _tableView.tag = RoomMsgScroViewTag;
+        
+        _tableView.estimatedRowHeight = 0.0;
+        _tableView.estimatedSectionHeaderHeight = 0.0;
+        _tableView.estimatedSectionFooterHeight = 0.0;
     }
     return _tableView;
 }
@@ -400,10 +461,10 @@
         _moreButton = [EWLayoutButton buttonWithType:UIButtonTypeCustom];
         _moreButton.layoutStyle = EWLayoutButtonStyleLeftTitleRightImage;
         [_moreButton setTitle:@"新消息" forState:UIControlStateNormal];
-        [_moreButton setImage:[UIImage imageNamed:@"message_more"] forState:UIControlStateNormal];
+        //[_moreButton setImage:[UIImage imageNamed:@"message_more"] forState:UIControlStateNormal];
         _moreButton.titleLabel.font = [UIFont systemFontOfSize:12];
-        [_moreButton setTitleColor:RGBA_OF(0xfee324) forState:normal];
-        _moreButton.backgroundColor = [UIColor purpleColor];
+        [_moreButton setTitleColor:RGBA_OF(0xffffff) forState:normal];
+        _moreButton.backgroundColor = RGBA_OF(0xff5a5a);
         _moreButton.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 15);
         _moreButton.hidden = YES;
         [_moreButton addTarget:self action:@selector(moreClick:) forControlEvents:UIControlEventTouchUpInside];

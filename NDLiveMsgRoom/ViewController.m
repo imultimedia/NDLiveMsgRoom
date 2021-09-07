@@ -14,7 +14,7 @@
 #import "WHDebugToolManager.h"
 
 // 每一秒发送多少条消息
-#define MAXCOUNT  30
+#define MAXCOUNT  40
 
 @interface ViewController ()<UITextFieldDelegate, RoomMsgListDelegate>
 {
@@ -37,14 +37,12 @@
     // DebugToolTypeMemory | DebugToolTypeCPU | DebugToolTypeFPS
     [[WHDebugToolManager sharedInstance] toggleWith:DebugToolTypeAll];
     
-    _conmentAry = @[@"如果我是DJ你会爱我吗🏷💋❤️💘💇 哟哟哟~~~",
-                    @"好喜欢主播，主播唱歌太好听了🎤🎤🎤🎤",  @"تیتینینینی这是阿拉伯文，阿拉伯文从右到左排版，我们强制把它从按照正常排版显示~~",
-                    @"哟哟~~切克闹！煎饼果子来一套~~😻✊❤️🙇",
-                    @"哟哟！！你看那面又大又宽，你看那碗又大又圆！哟哟~~~😁😁😁😁😁😁",
-                    @"蔡徐坤是NBA打球最帅的woman~~😏😏😏😏😏😏，不服来辩~~",
-                    @"吴亦凡是rap界最有内涵的woman😏😏😏😏😏😏，不服来辩~~~"];
+    _conmentAry = @[@"继承🔥之意志，成为海贼王的男人☠️☠️☠️💋❤️💘💇~~~",
+                    @"欢迎进入直播间，喜欢就点击加关注！🎤🎤🎤🎤",
+                    @"海贼王哥尔·D·罗杰⛵️在临死前曾留下了关于其毕生的财富“One Piece”的消息😻✊❤️🙇",
+                    @"《海贼王剧场版》⛵️是根据漫画家尾田荣一郎创作的漫画《航海王》☠️改编的系列动画电影，影片讲述的是主人公“蒙奇·D·路飞”所带领的海贼团的故事。"];
     
-    _nameAry = @[@"蔡徐坤", @"吴亦凡", @"吴京", @"成龙", @"郭敬明"];
+    _nameAry = @[@"罗罗诺亚・索隆", @"蒙奇·D·路飞", @"特拉法尔加·罗", @"波特卡斯·D·艾斯"];
     
     self.textField.delegate = self;
     
@@ -136,7 +134,7 @@
             
             break;
         case NDSubMsgType_Announcement:
-            msgModel.content = @"这是一条系统公告，这是一条系统公告，这是一条系统公告，这是一条系统公告，这是一条系统公告。";
+            msgModel.content = @"系统消息：继承🔥之意志的海贼王☠️⛵️";
             break;
         case NDSubMsgType_Gift_Text:
         {

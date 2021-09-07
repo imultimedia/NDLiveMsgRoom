@@ -9,6 +9,7 @@
 #import "NDMsgAttributeModel.h"
 #import "NDMsgModel.h"
 #import "EWLevelManager.h"
+#import <SDWebImage/SDImageCache.h>
 
 @interface NDMsgAttributeModel()
 

@@ -13,8 +13,6 @@
 		6A6146CB2244DF740096CCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A6146CA2244DF740096CCE0 /* Assets.xcassets */; };
 		6A6146CE2244DF740096CCE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A6146CC2244DF740096CCE0 /* LaunchScreen.storyboard */; };
 		6A6146D12244DF740096CCE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6146D02244DF740096CCE0 /* main.m */; };
-		6A6146DB2244DF740096CCE0 /* NDLiveMsgRoomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6146DA2244DF740096CCE0 /* NDLiveMsgRoomTests.m */; };
-		6A6146E62244DF740096CCE0 /* NDLiveMsgRoomUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6146E52244DF740096CCE0 /* NDLiveMsgRoomUITests.m */; };
 		6A6147062244E2170096CCE0 /* NDLiveMsgBassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6146F62244E2160096CCE0 /* NDLiveMsgBassCell.m */; };
 		6A6147072244E2170096CCE0 /* NDMsgNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6146F82244E2170096CCE0 /* NDMsgNormalCell.m */; };
 		6A6147082244E2170096CCE0 /* NDMsgSynthesizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6146F92244E2170096CCE0 /* NDMsgSynthesizeCell.m */; };
@@ -41,26 +39,9 @@
 		763BD73E42C8ABB7B2F2472F /* libPods-NDLiveMsgRoom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F05AC83F5B364BE7410BC606 /* libPods-NDLiveMsgRoom.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6A6146D72244DF740096CCE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6A6146B62244DF730096CCE0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6A6146BD2244DF730096CCE0;
-			remoteInfo = NDLiveMsgRoom;
-		};
-		6A6146E22244DF740096CCE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6A6146B62244DF730096CCE0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6A6146BD2244DF730096CCE0;
-			remoteInfo = NDLiveMsgRoom;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		43CCAA4C9D1BC593F8C32619 /* Pods-NDLiveMsgRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDLiveMsgRoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NDLiveMsgRoom/Pods-NDLiveMsgRoom.debug.xcconfig"; sourceTree = "<group>"; };
-		6A6146BE2244DF730096CCE0 /* NDLiveMsgRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NDLiveMsgRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6146BE2244DF730096CCE0 /* LiveMsg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveMsg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6146C12244DF730096CCE0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6A6146C22244DF730096CCE0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6A6146C42244DF730096CCE0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -70,12 +51,6 @@
 		6A6146CD2244DF740096CCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A6146CF2244DF740096CCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A6146D02244DF740096CCE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6A6146D62244DF740096CCE0 /* NDLiveMsgRoomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NDLiveMsgRoomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A6146DA2244DF740096CCE0 /* NDLiveMsgRoomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NDLiveMsgRoomTests.m; sourceTree = "<group>"; };
-		6A6146DC2244DF740096CCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A6146E12244DF740096CCE0 /* NDLiveMsgRoomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NDLiveMsgRoomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A6146E52244DF740096CCE0 /* NDLiveMsgRoomUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NDLiveMsgRoomUITests.m; sourceTree = "<group>"; };
-		6A6146E72244DF740096CCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A6146F62244E2160096CCE0 /* NDLiveMsgBassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDLiveMsgBassCell.m; sourceTree = "<group>"; };
 		6A6146F72244E2170096CCE0 /* NDMsgNormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDMsgNormalCell.h; sourceTree = "<group>"; };
 		6A6146F82244E2170096CCE0 /* NDMsgNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDMsgNormalCell.m; sourceTree = "<group>"; };
@@ -136,20 +111,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A6146D32244DF740096CCE0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6A6146DE2244DF740096CCE0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -174,8 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				6A6146C02244DF730096CCE0 /* NDLiveMsgRoom */,
-				6A6146D92244DF740096CCE0 /* NDLiveMsgRoomTests */,
-				6A6146E42244DF740096CCE0 /* NDLiveMsgRoomUITests */,
 				6A6146BF2244DF730096CCE0 /* Products */,
 				0C5251528892142229F8B4E8 /* Pods */,
 				60250789A89943A6293D53E8 /* Frameworks */,
@@ -185,9 +144,7 @@
 		6A6146BF2244DF730096CCE0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A6146BE2244DF730096CCE0 /* NDLiveMsgRoom.app */,
-				6A6146D62244DF740096CCE0 /* NDLiveMsgRoomTests.xctest */,
-				6A6146E12244DF740096CCE0 /* NDLiveMsgRoomUITests.xctest */,
+				6A6146BE2244DF730096CCE0 /* LiveMsg.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,24 +173,6 @@
 				6A6146D02244DF740096CCE0 /* main.m */,
 			);
 			path = NDLiveMsgRoom;
-			sourceTree = "<group>";
-		};
-		6A6146D92244DF740096CCE0 /* NDLiveMsgRoomTests */ = {
-			isa = PBXGroup;
-			children = (
-				6A6146DA2244DF740096CCE0 /* NDLiveMsgRoomTests.m */,
-				6A6146DC2244DF740096CCE0 /* Info.plist */,
-			);
-			path = NDLiveMsgRoomTests;
-			sourceTree = "<group>";
-		};
-		6A6146E42244DF740096CCE0 /* NDLiveMsgRoomUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6A6146E52244DF740096CCE0 /* NDLiveMsgRoomUITests.m */,
-				6A6146E72244DF740096CCE0 /* Info.plist */,
-			);
-			path = NDLiveMsgRoomUITests;
 			sourceTree = "<group>";
 		};
 		6A6146F52244E1720096CCE0 /* LiveRoomMsg */ = {
@@ -315,44 +254,8 @@
 			);
 			name = NDLiveMsgRoom;
 			productName = NDLiveMsgRoom;
-			productReference = 6A6146BE2244DF730096CCE0 /* NDLiveMsgRoom.app */;
+			productReference = 6A6146BE2244DF730096CCE0 /* LiveMsg.app */;
 			productType = "com.apple.product-type.application";
-		};
-		6A6146D52244DF740096CCE0 /* NDLiveMsgRoomTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6A6146ED2244DF740096CCE0 /* Build configuration list for PBXNativeTarget "NDLiveMsgRoomTests" */;
-			buildPhases = (
-				6A6146D22244DF740096CCE0 /* Sources */,
-				6A6146D32244DF740096CCE0 /* Frameworks */,
-				6A6146D42244DF740096CCE0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6A6146D82244DF740096CCE0 /* PBXTargetDependency */,
-			);
-			name = NDLiveMsgRoomTests;
-			productName = NDLiveMsgRoomTests;
-			productReference = 6A6146D62244DF740096CCE0 /* NDLiveMsgRoomTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		6A6146E02244DF740096CCE0 /* NDLiveMsgRoomUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6A6146F02244DF740096CCE0 /* Build configuration list for PBXNativeTarget "NDLiveMsgRoomUITests" */;
-			buildPhases = (
-				6A6146DD2244DF740096CCE0 /* Sources */,
-				6A6146DE2244DF740096CCE0 /* Frameworks */,
-				6A6146DF2244DF740096CCE0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6A6146E32244DF740096CCE0 /* PBXTargetDependency */,
-			);
-			name = NDLiveMsgRoomUITests;
-			productName = NDLiveMsgRoomUITests;
-			productReference = 6A6146E12244DF740096CCE0 /* NDLiveMsgRoomUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -360,19 +263,11 @@
 		6A6146B62244DF730096CCE0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = ljq;
 				TargetAttributes = {
 					6A6146BD2244DF730096CCE0 = {
 						CreatedOnToolsVersion = 10.1;
-					};
-					6A6146D52244DF740096CCE0 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 6A6146BD2244DF730096CCE0;
-					};
-					6A6146E02244DF740096CCE0 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 6A6146BD2244DF730096CCE0;
 					};
 				};
 			};
@@ -390,8 +285,6 @@
 			projectRoot = "";
 			targets = (
 				6A6146BD2244DF730096CCE0 /* NDLiveMsgRoom */,
-				6A6146D52244DF740096CCE0 /* NDLiveMsgRoomTests */,
-				6A6146E02244DF740096CCE0 /* NDLiveMsgRoomUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -404,20 +297,6 @@
 				6A6146CE2244DF740096CCE0 /* LaunchScreen.storyboard in Resources */,
 				6A6146CB2244DF740096CCE0 /* Assets.xcassets in Resources */,
 				6A6146C92244DF730096CCE0 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6A6146D42244DF740096CCE0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6A6146DF2244DF740096CCE0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,36 +357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A6146D22244DF740096CCE0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A6146DB2244DF740096CCE0 /* NDLiveMsgRoomTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6A6146DD2244DF740096CCE0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A6146E62244DF740096CCE0 /* NDLiveMsgRoomUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6A6146D82244DF740096CCE0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6A6146BD2244DF730096CCE0 /* NDLiveMsgRoom */;
-			targetProxy = 6A6146D72244DF740096CCE0 /* PBXContainerItemProxy */;
-		};
-		6A6146E32244DF740096CCE0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6A6146BD2244DF730096CCE0 /* NDLiveMsgRoom */;
-			targetProxy = 6A6146E22244DF740096CCE0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6A6146C72244DF730096CCE0 /* Main.storyboard */ = {
@@ -555,6 +405,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -580,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -614,6 +465,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -633,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -648,15 +500,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/ljq/Desktop/NDLiveMsgRoom/NDLiveMsgRoom/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "${SRCROOT}/NDLiveMsgRoom/PrefixHeader.pch";
 				INFOPLIST_FILE = NDLiveMsgRoom/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gameDemo.www.NDLiveMsgRoom;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.live.msg;
+				PRODUCT_NAME = LiveMsg;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -668,86 +520,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/ljq/Desktop/NDLiveMsgRoom/NDLiveMsgRoom/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "${SRCROOT}/NDLiveMsgRoom/PrefixHeader.pch";
 				INFOPLIST_FILE = NDLiveMsgRoom/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gameDemo.www.NDLiveMsgRoom;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.live.msg;
+				PRODUCT_NAME = LiveMsg;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		6A6146EE2244DF740096CCE0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NDLiveMsgRoomTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gameDemo.www.NDLiveMsgRoomTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NDLiveMsgRoom.app/NDLiveMsgRoom";
-			};
-			name = Debug;
-		};
-		6A6146EF2244DF740096CCE0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NDLiveMsgRoomTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gameDemo.www.NDLiveMsgRoomTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NDLiveMsgRoom.app/NDLiveMsgRoom";
-			};
-			name = Release;
-		};
-		6A6146F12244DF740096CCE0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NDLiveMsgRoomUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gameDemo.www.NDLiveMsgRoomUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NDLiveMsgRoom;
-			};
-			name = Debug;
-		};
-		6A6146F22244DF740096CCE0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NDLiveMsgRoomUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gameDemo.www.NDLiveMsgRoomUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NDLiveMsgRoom;
 			};
 			name = Release;
 		};
@@ -768,24 +550,6 @@
 			buildConfigurations = (
 				6A6146EB2244DF740096CCE0 /* Debug */,
 				6A6146EC2244DF740096CCE0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6A6146ED2244DF740096CCE0 /* Build configuration list for PBXNativeTarget "NDLiveMsgRoomTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6A6146EE2244DF740096CCE0 /* Debug */,
-				6A6146EF2244DF740096CCE0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6A6146F02244DF740096CCE0 /* Build configuration list for PBXNativeTarget "NDLiveMsgRoomUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6A6146F12244DF740096CCE0 /* Debug */,
-				6A6146F22244DF740096CCE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
