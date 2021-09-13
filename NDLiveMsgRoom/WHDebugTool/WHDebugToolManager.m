@@ -94,7 +94,7 @@ static id _instance;
     self.debugWindow = [[UIWindow alloc] initWithFrame:CGRectMake(0, debugWindowY, kDebugScreenWidth, kDebugLabelHeight)];
     self.debugWindow.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
     self.debugWindow.windowLevel = UIWindowLevelAlert;
-    self.debugWindow.rootViewController = [WHDebugTempVC new];
+    self.debugWindow.rootViewController = [[WHDebugTempVC alloc] init];
     self.debugWindow.hidden = NO;
 }
 

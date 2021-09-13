@@ -82,7 +82,7 @@
 
 - (UILabel *)leveLabel {
     if (!_leveLabel) {
-        _leveLabel = [UILabel new];
+        _leveLabel = [[UILabel alloc] init];
         _leveLabel.textColor = RGBA_OF(0xffffff);
         _leveLabel.font = [UIFont boldSystemFontOfSize:10];
         _leveLabel.textAlignment = NSTextAlignmentCenter;
@@ -94,7 +94,7 @@
 
 - (UIImageView *)leveImage {
     if (!_leveImage) {
-        _leveImage = [UIImageView new];
+        _leveImage = [[UIImageView alloc] init];
     }
     return _leveImage;
 }

@@ -13,7 +13,7 @@
 
 
 // 最小刷新时间间隔
-#define reloadTimeSpan 1.0
+#define reloadTimeSpan 0.5
 // 爬楼消息的上限（大于这个值时，更早的消息会被抛弃）
 #define tempMaxCount 200
 // 爬楼消息的下限
@@ -122,7 +122,7 @@
     // 消息汇总前做判断，用来清理旧数据
     NSInteger totalMsgCnt = self.tempMsgArray.count+self.msgArray.count;// 总消息数量
     NSLog(@"当前总消息数:%ld",totalMsgCnt);
-    if (totalMsgCnt > totalMaxCount) {
+    if (totalMsgCnt >= totalMaxCount) {
         
         NSLog(@"触发消息上限删除");
         // 大于消息数量清理上限
@@ -147,7 +147,7 @@
         [self.tableView reloadData];
         
         
-    } else if(totalMsgCnt < totalMinCount || (totalMsgCnt > totalMinCount && totalMsgCnt < totalMaxCount)) {
+    } else if(totalMsgCnt <= totalMinCount || (totalMsgCnt > totalMinCount && totalMsgCnt < totalMaxCount)) {
         // 小于消息数量清理下限或在上下限之间
         // 会将新加入的缓存数据源消息追加到聊天列表中，而不是刷新聊天列表
         
@@ -426,7 +426,9 @@
         //_tableView.estimatedRowHeight = 40;
         _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive|UIScrollViewKeyboardDismissModeOnDrag;
         _tableView.bounces = NO;
-        _tableView.tableFooterView = [UIView new];
+        _tableView.scrollsToTop = NO;
+        
+        _tableView.tableFooterView = [[UIView alloc] init];
         _tableView.sectionFooterHeight = 0;
         _tableView.sectionHeaderHeight = 0;
         

@@ -12,7 +12,7 @@
 
 // 刷新消息方式
 typedef NS_ENUM(NSUInteger, NDReloadLiveMsgRoomType) {
-    NDReloadLiveMsgRoom_Time = 0, // 1.0秒刷新一次消息
+    NDReloadLiveMsgRoom_Time = 0, // 0.5秒刷新一次消息
     NDReloadLiveMsgRoom_Direct,   // 直接刷新
 };
 

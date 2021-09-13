@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DEC27A7CC726403D24CBC4FB28FA9C40"
-               BuildableName = "libPods-NDLiveMsgRoom.a"
+               BuildableName = "Pods_NDLiveMsgRoom.framework"
                BlueprintName = "Pods-NDLiveMsgRoom"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DEC27A7CC726403D24CBC4FB28FA9C40"
-            BuildableName = "libPods-NDLiveMsgRoom.a"
+            BuildableName = "Pods_NDLiveMsgRoom.framework"
             BlueprintName = "Pods-NDLiveMsgRoom"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

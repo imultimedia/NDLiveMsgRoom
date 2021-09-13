@@ -81,7 +81,7 @@
 
 - (UIImageView *)remindImageV {
     if (!_remindImageV) {
-        _remindImageV = [UIImageView new];
+        _remindImageV = [[UIImageView alloc] init];
     }
     return _remindImageV;
 }

@@ -10,11 +10,11 @@ PODS:
   - YYText (1.0.7)
 
 DEPENDENCIES:
-  - Masonry
-  - SDWebImage
-  - YYImage
-  - YYModel
-  - YYText
+  - Masonry (~> 1.1.0)
+  - SDWebImage (~> 5.11.1)
+  - YYImage (~> 1.0.4)
+  - YYModel (~> 1.0.4)
+  - YYText (~> 1.0.7)
 
 SPEC REPOS:
   trunk:
@@ -31,6 +31,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 59f01b499776b3d80c098cac8bfea77e0ec8e5c4
+PODFILE CHECKSUM: 11393699ed8657120f12039896bf59cd28733f9a
 
 COCOAPODS: 1.10.1

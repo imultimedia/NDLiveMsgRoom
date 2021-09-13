@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E9A97B8C648CE11FC831A58 /* Pods_NDLiveMsgRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E73F374D3DEFA11D211226 /* Pods_NDLiveMsgRoom.framework */; };
 		6A6146C32244DF730096CCE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6146C22244DF730096CCE0 /* AppDelegate.m */; };
 		6A6146C62244DF730096CCE0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6146C52244DF730096CCE0 /* ViewController.m */; };
 		6A6146C92244DF730096CCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A6146C72244DF730096CCE0 /* Main.storyboard */; };
@@ -36,7 +37,6 @@
 		6AB03286224B262D009D9565 /* NDGiftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB03285224B262D009D9565 /* NDGiftModel.m */; };
 		6AB03289224B5D60009D9565 /* EWLevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB03288224B5D60009D9565 /* EWLevelManager.m */; };
 		6AB0328C224B600C009D9565 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0328B224B600C009D9565 /* UIView+Frame.m */; };
-		763BD73E42C8ABB7B2F2472F /* libPods-NDLiveMsgRoom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F05AC83F5B364BE7410BC606 /* libPods-NDLiveMsgRoom.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,7 +98,7 @@
 		6AB03288224B5D60009D9565 /* EWLevelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWLevelManager.m; sourceTree = "<group>"; };
 		6AB0328A224B600C009D9565 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		6AB0328B224B600C009D9565 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		F05AC83F5B364BE7410BC606 /* libPods-NDLiveMsgRoom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NDLiveMsgRoom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81E73F374D3DEFA11D211226 /* Pods_NDLiveMsgRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NDLiveMsgRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F0693E97D7A6E444BC5D56 /* Pods-NDLiveMsgRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDLiveMsgRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-NDLiveMsgRoom/Pods-NDLiveMsgRoom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				763BD73E42C8ABB7B2F2472F /* libPods-NDLiveMsgRoom.a in Frameworks */,
+				3E9A97B8C648CE11FC831A58 /* Pods_NDLiveMsgRoom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 		60250789A89943A6293D53E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F05AC83F5B364BE7410BC606 /* libPods-NDLiveMsgRoom.a */,
+				81E73F374D3DEFA11D211226 /* Pods_NDLiveMsgRoom.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -247,6 +247,7 @@
 				6A6146BA2244DF730096CCE0 /* Sources */,
 				6A6146BB2244DF730096CCE0 /* Frameworks */,
 				6A6146BC2244DF730096CCE0 /* Resources */,
+				0BE23E00DE890FFF8936F23D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +304,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0BE23E00DE890FFF8936F23D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NDLiveMsgRoom/Pods-NDLiveMsgRoom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		86425C1DC88FC19B1A234EDE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -499,6 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/NDLiveMsgRoom/PrefixHeader.pch";
 				INFOPLIST_FILE = NDLiveMsgRoom/Info.plist;
@@ -519,6 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/NDLiveMsgRoom/PrefixHeader.pch";
 				INFOPLIST_FILE = NDLiveMsgRoom/Info.plist;

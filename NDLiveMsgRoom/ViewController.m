@@ -68,7 +68,7 @@
         EWWeakSelf
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-        dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0*NSEC_PER_SEC/MAXCOUNT, 0);
+        dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 0.5 * NSEC_PER_SEC/MAXCOUNT, 0);
         dispatch_source_set_event_handler(_timer, ^{
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf creatTestIMMsg:arc4random() % 7];
@@ -89,7 +89,7 @@
 
 // 随机生成不同类型消息
 - (void)creatTestIMMsg:(NDSubMsgType)subType {
-    NDMsgModel *msgModel = [NDMsgModel new];
+    NDMsgModel *msgModel = [[NDMsgModel alloc] init];
     if (subType == 0) {
         msgModel.subType = arc4random() % 7;
     } else {
@@ -97,7 +97,7 @@
     }
     msgModel.msgID = [NSString stringWithFormat:@"msgID_%u", arc4random() % 10000];
     
-    NDUserModel *user = [NDUserModel new];
+    NDUserModel *user = [[NDUserModel alloc] init];
     user.nickName = _nameAry[arc4random() % _nameAry.count];
     user.userID = [NSString stringWithFormat:@"userID_%ld", msgModel.subType];
     user.level = arc4random() % 100;
@@ -121,7 +121,7 @@
             break;
         case NDSubMsgType_At:
         {
-            msgModel.atUser = [NDUserModel new];
+            msgModel.atUser = [[NDUserModel alloc] init];
             msgModel.atUser.nickName = @"这是一个被@的用户";
             msgModel.atUser.userID = @"10086";
             msgModel.atUser.gender = arc4random() % 1;
@@ -139,7 +139,7 @@
         case NDSubMsgType_Gift_Text:
         {
             msgModel.quantity = @"1";
-            msgModel.giftModel = [NDGiftModel new];
+            msgModel.giftModel = [[NDGiftModel alloc] init];
             msgModel.giftModel.giftID = [NSString stringWithFormat:@"giftID_%u", arc4random() % 10];
             msgModel.giftModel.thumbnailUrl = @"https://showme-livecdn.9yiwums.com/gift/gift/20190225/b9a2dc3f1bef436598dfa470eada6a60.png";
             msgModel.giftModel.name = @"烟花🎆";

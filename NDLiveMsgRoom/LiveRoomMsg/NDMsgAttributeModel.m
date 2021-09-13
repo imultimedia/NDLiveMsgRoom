@@ -142,7 +142,7 @@
     
     if (isTap) {
         EWWeakSelf;
-        YYTextHighlight *highlight = [YYTextHighlight new];
+        YYTextHighlight *highlight = [[YYTextHighlight alloc] init];
         highlight.tapAction = ^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect) {
             if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(msgAttributeTapAction)]) {
                 [weakSelf.delegate msgAttributeTapAction];
@@ -164,7 +164,7 @@
     
     if (isTap) {
         EWWeakSelf;
-        YYTextHighlight *highlight = [YYTextHighlight new];
+        YYTextHighlight *highlight = [[YYTextHighlight alloc] init];
         highlight.tapAction = ^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect) {
             if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(msgAttributeTapAction)]) {
                 [weakSelf.delegate msgAttributeTapAction];
