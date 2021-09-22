@@ -66,6 +66,7 @@
 
 - (void)dealloc {
     NSLog(@"dealloc-----%@", NSStringFromClass([self class]));
+    [self reset];
 }
 
 - (void)setReloadType:(NDReloadLiveMsgRoomType)reloadType {
